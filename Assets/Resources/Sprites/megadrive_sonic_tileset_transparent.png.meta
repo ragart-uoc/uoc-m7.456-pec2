@@ -1,0 +1,1983 @@
+fileFormatVersion: 2
+guid: d1ed3410330db234eb0c22b361f268f9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 39
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1261
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51104e341b53e3c4cb2c29f659a757a2
+      internalID: 1516216569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1261
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d8495a1b350b94eb7575774f0bbf36
+      internalID: -271561372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_2
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1261
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bfa8e1ed518be4dba757e29504960c
+      internalID: 137475062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_3
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1261
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a048bdca320b7c4f9ec484c0a5ad617
+      internalID: -1352912916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_4
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1261
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3fd2eeb5d3fb44f88f6a015a70b03b
+      internalID: 1516636174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1261
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7dd6638eaf88649a7c58e52b5a76df
+      internalID: -163588579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1261
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8f60f756dee004ab277f45d9ba09a2
+      internalID: -1968878647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_7
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1258
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7727889e4f3135c49be8870ad8fafd4f
+      internalID: 1471674959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1170
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72205805248ca12499501c075d4e0692
+      internalID: 1520451865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1172
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4aa877d67670e4991bc6c7a1d50ee2
+      internalID: 1771542582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_10
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1170
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692f858837c1c414f80a5f8c9d027ba9
+      internalID: -931231081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1170
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3ea4876ebd4c743b5575c1926d07c2
+      internalID: -1432918821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_12
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1172
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e396e230800c1c41a2479b35df7a244
+      internalID: 2008606496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_13
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1170
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720a14f89b5d048449376c568cbf48d5
+      internalID: -665659074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_14
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1170
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390fb228c5f9663438622b450901de75
+      internalID: -1539399380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_15
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1170
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38d2278b9185dd4d948470fc579f6b7
+      internalID: -1885979916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_16
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1081
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb3b9f03ff99be4797136cd320ff099
+      internalID: -568182432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_17
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1077
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0552f161071803747839060a01063d4c
+      internalID: 1888859819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_18
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1079
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f223463f8427944bff5b6586952f1b
+      internalID: 1479721977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_19
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1078
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83417e8e5e3e5543b9cac189bdc749b
+      internalID: 238484335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1075
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd57c18974a3a24a85491892986e29e
+      internalID: -762097676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_21
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1083
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32af8ebfdf66a57428c987b545b94d09
+      internalID: 406859108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_22
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1079
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c72a50f48079a4b99dbc97cf3023d6
+      internalID: -1668679018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_23
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1079
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c82e9dd527f574ebe8c5bcdea167df
+      internalID: -1622986673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_24
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 988
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f80ad0bf2d5b949ac19e8a98f53a1f
+      internalID: 2108443085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_25
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 988
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e054f744250bc164f98fd4a7d500efe2
+      internalID: -1806934958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_26
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 988
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52987a3f592215f4aa85c8776634d272
+      internalID: -1030621680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_27
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 988
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678f785e56ae1b04ba80267ea3c69dc6
+      internalID: 2113944158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_28
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 986
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcd0db4010747a498df1677c3d8a386
+      internalID: 860078108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_29
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 986
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e835d6b1e0000d4bb617e86bcc27261
+      internalID: -2116653992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_30
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 986
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3ab0b84a7ea604e9a1c801ae957cab
+      internalID: 1321797940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_31
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 986
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ecf4793f50192d408bc128ef36ac492
+      internalID: 599659708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_32
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 902
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e80027526fe1b14cb368f2600719b04
+      internalID: -1930950663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_33
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 903
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2713df332fec77745a126b332c638ee2
+      internalID: -2003780837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_34
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 902
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f777458c7fe2848a312b5ce43b4882
+      internalID: 619045758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_35
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 902
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea4252ee942dda42a4fe82ba8a7a46d
+      internalID: 1161283826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_36
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 902
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a865ac9302c2445ad51d13244e45b0
+      internalID: -1331359599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_37
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 897
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b29294e18f867448e6b979b3aa7271
+      internalID: -1143004829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_38
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 897
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f116eef2277a31e44a0f6cb64ff76397
+      internalID: -1422118847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_39
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 897
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4f4b21eb0b9de49b69e8b129cf4d44
+      internalID: 27576035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_40
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 897
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59c9e3a27b76804aab834a88686107e
+      internalID: -712524246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_41
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 811
+        width: 48
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6845beee8b957847ba433fb0533b5d4
+      internalID: 2140337673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_42
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 810
+        width: 47
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba184ac969f30547a287ba51a95797c
+      internalID: -1383062733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_43
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 816
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80011b4fd9df38a47b5069c3bbc7f7eb
+      internalID: -1518352075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_44
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 816
+        width: 44
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c348fb86385cabd458b257b26753538d
+      internalID: 1450793976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_45
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 816
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fe825054ee0f543b14927ce4462753
+      internalID: 1262620983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_46
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 815
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce8becc050006844b60f03c80b3ffd9
+      internalID: 1407608691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_47
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 815
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec35a51ea0cdd3428be107608ea19d0
+      internalID: 1370044900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_48
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 808
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86fdc565b29876f40aab936bb8e43824
+      internalID: -1001870608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_49
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 719
+        width: 40
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11494a78da306c9439189d6b0df919d5
+      internalID: -2048923881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_50
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 720
+        width: 39
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19d29548beccfb4fb48f5225fc735c7
+      internalID: 565222207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_51
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 717
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874dafb9b1465cb41a10968611b9ca66
+      internalID: -609390753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_52
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 717
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f114f7fb3a005c41abe646aa1d2cd81
+      internalID: -1311209977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_53
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 746
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378a179f2ffcd67419dbee184f452664
+      internalID: 93798980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_54
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 713
+        width: 40
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219b0ad460be30f4a81dfa6e15a597fb
+      internalID: 663455151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_55
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 713
+        width: 40
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a99087ffc554a346892b27e1b750fac
+      internalID: -85229145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_56
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 713
+        width: 40
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d68103c0839aa468094d79ebf3f184
+      internalID: -723129954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_57
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 712
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8c84ab04b919d41b0a4a17d4614b70
+      internalID: -1000086910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_58
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 714
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1021824da2311aa4dbadfb23842f07a1
+      internalID: -775463226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_59
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 700
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514e1db2f9b95d044814abb81f0ec937
+      internalID: -560672133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_60
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 589
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0369634a6548ae7428aeb93abad33f36
+      internalID: -197890345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_61
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 589
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef6b5d80eeac6f408d6962aa56b6e45
+      internalID: -1692100383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_62
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 589
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952cce76898036d4d837cc760ecdb083
+      internalID: 244398724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_63
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 589
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485dd22a13cd8ae449094407a8fab8b3
+      internalID: 1227847387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_64
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 589
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9c3dad90cedd0499289a5f902c50a7
+      internalID: 1357875861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_65
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 589
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59e2c0c2e3486845b761fff62418545
+      internalID: -770807065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_66
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 589
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7570c312fcff04cae23fa1d8a2bea4
+      internalID: -1976813640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_67
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 589
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15524fd1672bdfb45af64ac25673c258
+      internalID: -1759337689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_68
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 311
+        width: 40
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd04dca0a5eec5d42aad6ec95b3740a2
+      internalID: -691699175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_69
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 306
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8173269a7e3357648aed3612e0774c5e
+      internalID: -100027471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_70
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 302
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6611d977db07fc14cbe9166f6ca541c3
+      internalID: -1264899447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_71
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 306
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1648b6c6db8fa4d4b80ad170eb1268bc
+      internalID: -2145254303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_72
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 303
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e248af63de34f8247b79013b2c98c9f2
+      internalID: -1831072662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_73
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 303
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc5a856c4a7e254ea05effc7492b88c
+      internalID: 1848978376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_74
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 302
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a95be788058834fa6cb232d5a4a523
+      internalID: -1936446305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_75
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 220
+        width: 44
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817fb0cc66338d7458793a5d4432d9dc
+      internalID: -531437149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_76
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 221
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2bed4abc492a549933223ad133ae93
+      internalID: -164737733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_77
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 212
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8934bfd803df03244a32a1309662123f
+      internalID: -1084344907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_78
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 214
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6dcc16478558549b489aaebc0e84dd
+      internalID: 1943757229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_79
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 217
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c915fda8a0e86e9498bed1428009c95d
+      internalID: -110727309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_80
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 221
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888135b457b84f14793fa126fc72e426
+      internalID: 211840985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_81
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 225
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d9bab8521ddfc43b181ddf5eeb81a9
+      internalID: -1903887231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_82
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 118
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a862b084a75a73a41b5a018367d627d7
+      internalID: 1071172963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megadrive_sonic_tileset_transparent_83
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 118
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aefe96d7655aa7147a9f908288a2d4ea
+      internalID: -1419586641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      megadrive_sonic_tileset_transparent_15: -1885979916
+      megadrive_sonic_tileset_transparent_30: 1321797940
+      megadrive_sonic_tileset_transparent_64: 1357875861
+      megadrive_sonic_tileset_transparent_63: 1227847387
+      megadrive_sonic_tileset_transparent_2: 137475062
+      megadrive_sonic_tileset_transparent_83: -1419586641
+      megadrive_sonic_tileset_transparent_74: -1936446305
+      megadrive_sonic_tileset_transparent_50: 565222207
+      megadrive_sonic_tileset_transparent_8: 1520451865
+      megadrive_sonic_tileset_transparent_29: -2116653992
+      megadrive_sonic_tileset_transparent_28: 860078108
+      megadrive_sonic_tileset_transparent_51: -609390753
+      megadrive_sonic_tileset_transparent_40: -712524246
+      megadrive_sonic_tileset_transparent_60: -197890345
+      megadrive_sonic_tileset_transparent_6: -1968878647
+      megadrive_sonic_tileset_transparent_22: -1668679018
+      megadrive_sonic_tileset_transparent_18: 1479721977
+      megadrive_sonic_tileset_transparent_3: -1352912916
+      megadrive_sonic_tileset_transparent_55: -85229145
+      megadrive_sonic_tileset_transparent_62: 244398724
+      megadrive_sonic_tileset_transparent_9: 1771542582
+      megadrive_sonic_tileset_transparent_43: -1518352075
+      megadrive_sonic_tileset_transparent_57: -1000086910
+      megadrive_sonic_tileset_transparent_81: -1903887231
+      megadrive_sonic_tileset_transparent_56: -723129954
+      megadrive_sonic_tileset_transparent_67: -1759337689
+      megadrive_sonic_tileset_transparent_73: 1848978376
+      megadrive_sonic_tileset_transparent_10: -931231081
+      megadrive_sonic_tileset_transparent_31: 599659708
+      megadrive_sonic_tileset_transparent_32: -1930950663
+      megadrive_sonic_tileset_transparent_70: -1264899447
+      megadrive_sonic_tileset_transparent_39: 27576035
+      megadrive_sonic_tileset_transparent_69: -100027471
+      megadrive_sonic_tileset_transparent_80: 211840985
+      megadrive_sonic_tileset_transparent_58: -775463226
+      megadrive_sonic_tileset_transparent_0: 1516216569
+      megadrive_sonic_tileset_transparent_13: -665659074
+      megadrive_sonic_tileset_transparent_61: -1692100383
+      megadrive_sonic_tileset_transparent_72: -1831072662
+      megadrive_sonic_tileset_transparent_20: -762097676
+      megadrive_sonic_tileset_transparent_49: -2048923881
+      megadrive_sonic_tileset_transparent_38: -1422118847
+      megadrive_sonic_tileset_transparent_35: 1161283826
+      megadrive_sonic_tileset_transparent_71: -2145254303
+      megadrive_sonic_tileset_transparent_14: -1539399380
+      megadrive_sonic_tileset_transparent_23: -1622986673
+      megadrive_sonic_tileset_transparent_75: -531437149
+      megadrive_sonic_tileset_transparent_77: -1084344907
+      megadrive_sonic_tileset_transparent_78: 1943757229
+      megadrive_sonic_tileset_transparent_33: -2003780837
+      megadrive_sonic_tileset_transparent_16: -568182432
+      megadrive_sonic_tileset_transparent_17: 1888859819
+      megadrive_sonic_tileset_transparent_1: -271561372
+      megadrive_sonic_tileset_transparent_19: 238484335
+      megadrive_sonic_tileset_transparent_79: -110727309
+      megadrive_sonic_tileset_transparent_27: 2113944158
+      megadrive_sonic_tileset_transparent_46: 1407608691
+      megadrive_sonic_tileset_transparent_52: -1311209977
+      megadrive_sonic_tileset_transparent_53: 93798980
+      megadrive_sonic_tileset_transparent_76: -164737733
+      megadrive_sonic_tileset_transparent_68: -691699175
+      megadrive_sonic_tileset_transparent_37: -1143004829
+      megadrive_sonic_tileset_transparent_34: 619045758
+      megadrive_sonic_tileset_transparent_82: 1071172963
+      megadrive_sonic_tileset_transparent_25: -1806934958
+      megadrive_sonic_tileset_transparent_45: 1262620983
+      megadrive_sonic_tileset_transparent_48: -1001870608
+      megadrive_sonic_tileset_transparent_24: 2108443085
+      megadrive_sonic_tileset_transparent_41: 2140337673
+      megadrive_sonic_tileset_transparent_7: 1471674959
+      megadrive_sonic_tileset_transparent_42: -1383062733
+      megadrive_sonic_tileset_transparent_59: -560672133
+      megadrive_sonic_tileset_transparent_66: -1976813640
+      megadrive_sonic_tileset_transparent_36: -1331359599
+      megadrive_sonic_tileset_transparent_5: -163588579
+      megadrive_sonic_tileset_transparent_44: 1450793976
+      megadrive_sonic_tileset_transparent_12: 2008606496
+      megadrive_sonic_tileset_transparent_65: -770807065
+      megadrive_sonic_tileset_transparent_54: 663455151
+      megadrive_sonic_tileset_transparent_4: 1516636174
+      megadrive_sonic_tileset_transparent_47: 1370044900
+      megadrive_sonic_tileset_transparent_26: -1030621680
+      megadrive_sonic_tileset_transparent_11: -1432918821
+      megadrive_sonic_tileset_transparent_21: 406859108
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
