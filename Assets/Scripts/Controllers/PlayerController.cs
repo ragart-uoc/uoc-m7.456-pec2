@@ -34,8 +34,11 @@ namespace PEC2.Controllers
         /// <value>Property <c>_isBig</c> represents the size of the player.</value>
         public bool isBig;
 
-        /// <value>Property <c>_isJumping</c> defines if the player is touching jumping.</value>
+        /// <value>Property <c>_isJumping</c> defines if the player is jumping.</value>
         private bool _isJumping;
+        
+        /// <value>Property <c>_isCrouching</c> defines if the player is crouching.</value>
+        private bool _isCrouching;
 
         /// <value>Property <c>AnimatorSpeed</c> preloads the Animator Speed parameter.</value>
         private static readonly int AnimatorSpeed = Animator.StringToHash("Speed");
@@ -48,6 +51,9 @@ namespace PEC2.Controllers
 
         /// <value>Property <c>AnimatorIsJumping</c> preloads the Animator isJumping parameter.</value>
         private static readonly int AnimatorIsJumping = Animator.StringToHash("isJumping");
+        
+        /// <value>Property <c>AnimatorIsCrouching</c> preloads the Animator isCrouching parameter.</value>
+        private static readonly int AnimatorIsCrouching = Animator.StringToHash("isCrouching");
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -66,7 +72,6 @@ namespace PEC2.Controllers
         {
             _speed = Input.GetAxisRaw("Horizontal") * runSpeed;
             _animator.SetFloat(AnimatorSpeed, Mathf.Abs(_speed));
-
             _animator.SetBool(AnimatorIsMoving, _body.velocity.x > 0.1f);
 
             if (Input.GetKey(KeyCode.RightArrow))
@@ -85,6 +90,12 @@ namespace PEC2.Controllers
             {
                 _isJumping = true;
             }
+            
+            if (Input.GetKey(KeyCode.DownArrow) && IsGrounded())
+            {
+                _isCrouching = true;
+            }
+            
         }
 
         /// <summary>
@@ -102,6 +113,17 @@ namespace PEC2.Controllers
                 _animator.SetBool(AnimatorIsJumping, true);
                 float jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * _body.gravityScale));
                 _body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+            
+            // Make the player crouch
+            if (_isCrouching)
+            {
+                _isCrouching = false;
+                _animator.SetBool(AnimatorIsCrouching, true);
+            }
+            else
+            {
+                _animator.SetBool(AnimatorIsCrouching, false);
             }
         }
 
@@ -134,6 +156,7 @@ namespace PEC2.Controllers
                 else
                 {
                     _animator.SetBool(AnimatorIsGrounded, false);
+                    _animator.SetBool(AnimatorIsCrouching, false);
                 }
             }
         }
@@ -147,6 +170,7 @@ namespace PEC2.Controllers
             if (collision.gameObject.CompareTag("Ground") && !IsGrounded())
             {
                 _animator.SetBool(AnimatorIsGrounded, false);
+                _animator.SetBool(AnimatorIsCrouching, false);
             }
         }
 
