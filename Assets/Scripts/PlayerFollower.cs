@@ -51,13 +51,13 @@ public class PlayerFollower : MonoBehaviour
             return;
         
         var bottomLeft = (Vector2) mainCamera.ScreenToWorldPoint(new Vector3(0, 0, mainCamera.nearClipPlane));
-        var topLeft = (Vector2) mainCamera.ScreenToWorldPoint(new Vector3(0, mainCamera.pixelHeight, mainCamera.nearClipPlane));
-        var topRight = (Vector2)mainCamera.ScreenToWorldPoint(new Vector3(mainCamera.pixelWidth, mainCamera.pixelHeight, mainCamera.nearClipPlane));
         var bottomRight = (Vector2)mainCamera.ScreenToWorldPoint(new Vector3(mainCamera.pixelWidth, 0, mainCamera.nearClipPlane));
+        var topLeft = (Vector2) mainCamera.ScreenToWorldPoint(new Vector3(0, mainCamera.pixelHeight * 1.5f, mainCamera.nearClipPlane));
+        var topRight = (Vector2)mainCamera.ScreenToWorldPoint(new Vector3(mainCamera.pixelWidth, mainCamera.pixelHeight * 1.5f, mainCamera.nearClipPlane));
 
         var edge = GetComponent<EdgeCollider2D>() == null ? gameObject.AddComponent<EdgeCollider2D>() : GetComponent<EdgeCollider2D>();
 
-        var edgePoints = new [] {bottomLeft,topLeft,topRight,bottomRight, bottomLeft};
+        var edgePoints = new [] {topLeft, bottomLeft, bottomRight, topRight};
         edge.points = edgePoints;
     }
 }

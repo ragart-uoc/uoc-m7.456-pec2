@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 16f;
     
     /// <value>Property <c>jumpForce</c> defines the jump force of the player.</value>
-    public float jumpForce = 10f;
+    public float jumpHeight = 5f;
     
     /// <value>Property <c>groundLayer</c> represents the LayerMask component of the player.</value>
     public LayerMask groundLayer;
@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             _isJumping = false;
             _animator.SetBool(AnimatorIsJumping, true);
+            float jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * _body.gravityScale));
             _body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
