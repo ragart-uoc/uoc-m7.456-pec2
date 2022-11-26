@@ -1,24 +1,49 @@
 using UnityEngine;
 
+/// <summary>
+/// Class <c>PlayerController</c> contains the methods and properties needed to control the player.
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
+    /// <value>Property <c>runSpeed</c> defines the speed factor of the player.</value>
     public float runSpeed = 10f;
+    
+    /// <value>Property <c>jumpForce</c> defines the jump force factor of the player.</value>
     public float jumpForce = 4f;
 
+    /// <value>Property <c>_body</c> represents the RigidBody2D component of the player.</value>
     private Rigidbody2D _body;
+    
+    /// <value>Property <c>_renderer</c> represents the SpriteRenderer component of the player.</value>
     private SpriteRenderer _renderer;
+    
+    /// <value>Property <c>_animator</c> represents the Animator component of the player.</value>
     private Animator _animator;
 
+    /// <value>Property <c>_speed</c> represents the horizontal speed of the player.</value>
     private float _speed;
     
+    /// <value>Property <c>_isGrounded</c> defines if the player is touching the ground.</value>
     private bool _isGrounded;
+    
+    /// <value>Property <c>_isJumping</c> defines if the player is touching jumping.</value>
     private bool _isJumping;
     
+    /// <value>Property <c>Speed</c> preloads the Animator Speed parameter.</value>
     private static readonly int Speed = Animator.StringToHash("Speed");
+    
+    /// <value>Property <c>IsGrounded</c> preloads the Animator isGrounded parameter.</value>
     private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
+    
+    /// <value>Property <c>IsMoving</c> preloads the Animator isMoving parameter.</value>
     private static readonly int IsMoving = Animator.StringToHash("isMoving");
+    
+    /// <value>Property <c>IsJumping</c> preloads the Animator isJumping parameter.</value>
     private static readonly int IsJumping = Animator.StringToHash("isJumping");
 
+    /// <summary>
+    /// Method <c>Awake</c> is called when the script instance is being loaded.
+    /// </summary>
     private void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
@@ -26,6 +51,9 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
     
+    /// <summary>
+    /// Method <c>Update</c> is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
     private void Update()
     {
         _speed = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -49,18 +77,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method <c>MoveForward</c> moves the player forward.
+    /// </summary>
     private void MoveForward()
     {
         var right = transform.right;
         _body.velocity += new Vector2(right.x * runSpeed, right.y * runSpeed) * Time.deltaTime;
     }
 
+    /// <summary>
+    /// Method <c>MoveBackward</c> moves the player backward.
+    /// </summary>
     private void MoveBackward()
     {
         var right = transform.right;
         _body.velocity -= new Vector2(right.x * runSpeed, right.y * runSpeed) * Time.deltaTime;
     }
 
+    /// <summary>
+    /// Method <c>OnCollisionEnter2D</c> is sent when an incoming collider makes contact with this object's collider.
+    /// </summary>
+    /// <param name="collision">The collision instance</param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -71,6 +109,10 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Method <c>OnCollisionExit2D</c> is sent when a collider on another object stops touching this object's collider.
+    /// </summary>
+    /// <param name="collision">The collision instance</param>
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -80,6 +122,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method <c>FixedUpdate</c> is called every fixed frame-rate frame.
+    /// </summary>
     private void FixedUpdate()
     {
         if (_isJumping)
