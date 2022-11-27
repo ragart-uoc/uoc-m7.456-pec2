@@ -1,3 +1,4 @@
+using PEC2.Managers;
 using UnityEngine;
 
 namespace PEC2.Controllers
@@ -7,8 +8,8 @@ namespace PEC2.Controllers
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
-        /// <value>Property <c>runSpeed</c> defines the initial speed of the player.</value>
-        public float runSpeed = 8f;
+        /// <value>Property <c>movingSpeed</c> defines the initial speed of the player.</value>
+        public float movingSpeed = 8f;
 
         /// <value>Property <c>maxSpeed</c> defines the maximum speed of the player.</value>
         public float maxSpeed = 16f;
@@ -16,8 +17,11 @@ namespace PEC2.Controllers
         /// <value>Property <c>jumpForce</c> defines the jump force of the player.</value>
         public float jumpHeight = 5f;
 
-        /// <value>Property <c>groundLayer</c> represents the LayerMask component of the player.</value>
+        /// <value>Property <c>groundLayer</c> represents the LayerMask component of the ground.</value>
         public LayerMask groundLayer;
+        
+        /// <value>Property <c>enemyLayer</c> represents the LayerMask component of the enemy.</value>
+        public LayerMask enemyLayer;
 
         /// <value>Property <c>_transform</c> represents the RigidBody2D component of the player.</value>
         private Transform _transform;
@@ -71,9 +75,11 @@ namespace PEC2.Controllers
         /// </summary>
         private void Update()
         {
-            _speed = Input.GetAxisRaw("Horizontal") * runSpeed;
+            _speed = Input.GetAxisRaw("Horizontal") * movingSpeed;
             _animator.SetFloat(AnimatorSpeed, Mathf.Abs(_speed));
             _animator.SetBool(AnimatorIsMoving, _body.velocity.x > 0.1f);
+
+            TryStomping();
 
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -181,7 +187,7 @@ namespace PEC2.Controllers
         private void MoveForward()
         {
             var right = transform.right;
-            _body.velocity += new Vector2(right.x * runSpeed, right.y * runSpeed) * Time.deltaTime;
+            _body.velocity += new Vector2(right.x * movingSpeed, right.y * movingSpeed) * Time.deltaTime;
         }
 
         /// <summary>
@@ -190,7 +196,7 @@ namespace PEC2.Controllers
         private void MoveBackward()
         {
             var right = transform.right;
-            _body.velocity -= new Vector2(right.x * runSpeed, right.y * runSpeed) * Time.deltaTime;
+            _body.velocity -= new Vector2(right.x * movingSpeed, right.y * movingSpeed) * Time.deltaTime;
         }
 
         /// <summary>
@@ -206,6 +212,23 @@ namespace PEC2.Controllers
             Debug.DrawRay(position, direction, Color.green);
             var hit = Physics2D.Raycast(position, direction, distance, groundLayer);
             return hit.collider != null;
+        }
+
+        /// <summary>
+        /// Method <c>TryStomping</c> check if the player is stomping an enemy.
+        /// </summary>
+        private void TryStomping()
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _transform.localScale.y / 2 + 0.1f,
+                enemyLayer);
+            if (hit && hit.collider.CompareTag("Enemy"))
+            {
+                if (hit.collider.TryGetComponent(out EnemyManager enemy))
+                {
+                    enemy.GetHit();
+                }
+                _body.velocity = new Vector2(_body.velocity.x, jumpHeight);
+            }
         }
     }
 }

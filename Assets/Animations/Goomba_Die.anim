@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sonic_Death
+  m_Name: Goomba_Die
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1311209977, guid: d1ed3410330db234eb0c22b361f268f9, type: 3}
+      value: {fileID: 347559757, guid: 13a73336f855ed744aae6ef0c2a65887, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -40,7 +40,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1311209977, guid: d1ed3410330db234eb0c22b361f268f9, type: 3}
+    - {fileID: 347559757, guid: 13a73336f855ed744aae6ef0c2a65887, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

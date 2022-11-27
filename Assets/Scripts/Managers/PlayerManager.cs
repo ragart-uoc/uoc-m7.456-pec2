@@ -27,13 +27,7 @@ namespace PEC2.Managers
 
         /// <value>Property <c>AnimatorIsDead</c> preloads the Animator isDead parameter.</value>
         private static readonly int AnimatorIsDead = Animator.StringToHash("isDead");
-        
-        private void Start()
-        {
-            
-            StartCoroutine(Grow());
-        }
-        
+
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
         /// </summary>
@@ -125,10 +119,14 @@ namespace PEC2.Managers
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
+            
+            _body.velocity = Vector2.zero;
 
             yield return new WaitForSeconds(5f);
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        
+        
     }
 }
