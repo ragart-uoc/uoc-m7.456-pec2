@@ -8,11 +8,14 @@ namespace PEC2.Managers
         /// <value>Property <c>movingSpeed</c> defines the initial speed of the enemy.</value>
         public float movingSpeed = 1f;
         
-        /// <value>Property <c>Directions</c> defines a list of possible directions.</value>
-        public enum Directions { Left, Right };
+        /// <value>Property <c>walkDirections</c> defines a list of possible walking directions.</value>
+        public enum WalkDirections { Left, Right };
         
-        /// <value>Property <c>direction</c> defines the current direction of the enemy.</value>
-        public Directions direction;
+        /// <value>Property <c>walkDirection</c> defines the walking direction of the enemy.</value>
+        public WalkDirections walkDirection;
+
+        /// <value>Property <c>_transform</c> represents the RigidBody2D component of the player.</value>
+        private Transform _transform;
         
         /// <value>Property <c>_body</c> represents the RigidBody2D component of the enemy.</value>
         private Rigidbody2D _body;
@@ -32,6 +35,7 @@ namespace PEC2.Managers
         private void Awake()
         {
             enabled = false;
+            _transform = transform;
             _body = GetComponent<Rigidbody2D>();
             _renderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
@@ -42,7 +46,8 @@ namespace PEC2.Managers
         /// </summary>
         private void Update()
         {
-            _body.velocity = direction == Directions.Left ? new Vector2(-movingSpeed, _body.velocity.y) : new Vector2(movingSpeed, _body.velocity.y);
+            CheckDirectionCollision();
+            _body.velocity = walkDirection == WalkDirections.Left ? new Vector2(-movingSpeed, _body.velocity.y) : new Vector2(movingSpeed, _body.velocity.y);
         }
 
         /// <summary>
@@ -51,6 +56,11 @@ namespace PEC2.Managers
         private void OnBecameVisible()
         {
             enabled = true;
+        }
+        
+        private void OnBecameInvisible()
+        {
+            Destroy(transform.parent.gameObject);
         }
 
         /// <summary>
@@ -66,26 +76,54 @@ namespace PEC2.Managers
                     playerManager.GetHit();
                 }
             }
-            else if (!collision.gameObject.CompareTag("Ground"))
-            {
-                direction = direction == Directions.Left ? Directions.Right : Directions.Left;
-                _renderer.flipX = direction == Directions.Left;
-            }
         }
         
+        /// <summary>
+        /// Method <c>GetHit</c> is called when the enemy is hit by the player.
+        /// </summary>
         public void GetHit()
         {
-            _animator.SetBool(AnimatorIsDead, true);
-            enabled = false;
             StartCoroutine(Die());
         }
         
+        /// <summary>
+        /// Method <c>Die</c> is called when the enemy is dead.
+        /// </summary>
         private IEnumerator Die()
         {
-            yield return new WaitForSeconds(1f);
+            enabled = false;
             
+            _animator.SetBool(AnimatorIsDead, true);
+
+            _body.constraints = RigidbodyConstraints2D.FreezePositionY;
+            
+            _transform.parent.gameObject.layer = LayerMask.NameToLayer("Death");
             gameObject.layer = LayerMask.NameToLayer("Death");
             _renderer.sortingLayerName = "Death";
+            
+            yield return new WaitForSeconds(1f);
+            
+            _body.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+        }
+        
+        /// <summary>
+        /// Method <c>CheckDirectionCollision</c> is called every frame to change the walking direction if the enemy is colliding with something that is not the player or the camera.
+        /// </summary>
+        private void CheckDirectionCollision()
+        {
+            Vector2 position = _transform.position;
+            var direction = walkDirection == WalkDirections.Left ? Vector2.left : Vector2.right;
+            var distance = _transform.localScale.x / 2 + 0.1f;
+            
+            var ray = new Ray2D(position, direction);
+            Debug.DrawRay(position, direction, Color.green);
+            
+            var hit = Physics2D.Raycast(ray.origin, ray.direction, distance);
+            if (hit.collider == null) return;
+            if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("MainCamera")) return;
+            
+            walkDirection = walkDirection == WalkDirections.Left ? WalkDirections.Right : WalkDirections.Left;
+            _renderer.flipX = walkDirection == WalkDirections.Left;
         }
     }
 }

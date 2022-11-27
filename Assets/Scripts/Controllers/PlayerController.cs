@@ -79,8 +79,6 @@ namespace PEC2.Controllers
             _animator.SetFloat(AnimatorSpeed, Mathf.Abs(_speed));
             _animator.SetBool(AnimatorIsMoving, _body.velocity.x > 0.1f);
 
-            TryStomping();
-
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 _renderer.flipX = false;
@@ -112,6 +110,9 @@ namespace PEC2.Controllers
         {
             // Clamp the maximum speed of the player
             _body.velocity = Vector2.ClampMagnitude(_body.velocity, maxSpeed);
+            
+            // Try to stomp an enemy
+            TryStomping();
 
             // Make the player jump
             if (_isJumping)
@@ -215,20 +216,24 @@ namespace PEC2.Controllers
         }
 
         /// <summary>
-        /// Method <c>TryStomping</c> check if the player is stomping an enemy.
+        /// Method <c>TryStomping</c> is called every frame to hit the enemy if the player is colliding with it from above.
         /// </summary>
         private void TryStomping()
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _transform.localScale.y / 2 + 0.1f,
-                enemyLayer);
-            if (hit && hit.collider.CompareTag("Enemy"))
+            Vector2 position = _transform.position;
+            var direction = Vector2.down;
+            var distance = _transform.localScale.y / 2 + 0.1f;
+            
+            Debug.DrawRay(position, direction, Color.red);
+            var hit = Physics2D.Raycast(position, direction, distance, enemyLayer);
+            if (!hit || !hit.collider.CompareTag("WeakPoint")) return;
+            Debug.Log("JACKPOT");
+            if (hit.collider.transform.GetChild(0).TryGetComponent(out EnemyManager enemy))
             {
-                if (hit.collider.TryGetComponent(out EnemyManager enemy))
-                {
-                    enemy.GetHit();
-                }
-                _body.velocity = new Vector2(_body.velocity.x, jumpHeight);
+                enemy.GetHit();
             }
+            
+            _body.velocity = new Vector2(_body.velocity.x, jumpHeight);
         }
     }
 }
