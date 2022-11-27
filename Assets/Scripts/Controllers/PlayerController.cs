@@ -223,12 +223,11 @@ namespace PEC2.Controllers
             Vector2 position = _transform.position;
             var direction = Vector2.down;
             var distance = _transform.localScale.y / 2 + 0.1f;
-            
+
             Debug.DrawRay(position, direction, Color.red);
             var hit = Physics2D.Raycast(position, direction, distance, enemyLayer);
             if (!hit || !hit.collider.CompareTag("WeakPoint")) return;
-            Debug.Log("JACKPOT");
-            if (hit.collider.transform.GetChild(0).TryGetComponent(out EnemyManager enemy))
+            if (hit.collider.transform.parent.gameObject.TryGetComponent(out EnemyManager enemy))
             {
                 enemy.GetHit();
             }

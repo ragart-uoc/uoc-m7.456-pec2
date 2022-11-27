@@ -60,7 +60,7 @@ namespace PEC2.Managers
         
         private void OnBecameInvisible()
         {
-            Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
         }
 
         /// <summary>
@@ -96,9 +96,9 @@ namespace PEC2.Managers
             _animator.SetBool(AnimatorIsDead, true);
 
             _body.constraints = RigidbodyConstraints2D.FreezePositionY;
-            
-            _transform.parent.gameObject.layer = LayerMask.NameToLayer("Death");
+
             gameObject.layer = LayerMask.NameToLayer("Death");
+            _transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Death");
             _renderer.sortingLayerName = "Death";
             
             yield return new WaitForSeconds(1f);
@@ -112,18 +112,19 @@ namespace PEC2.Managers
         private void CheckDirectionCollision()
         {
             Vector2 position = _transform.position;
+            var newPosition = new Vector2(position.x, position.y - 0.1f); 
             var direction = walkDirection == WalkDirections.Left ? Vector2.left : Vector2.right;
             var distance = _transform.localScale.x / 2 + 0.1f;
             
-            var ray = new Ray2D(position, direction);
-            Debug.DrawRay(position, direction, Color.green);
+            var ray = new Ray2D(newPosition, direction);
+            Debug.DrawRay(newPosition, direction, Color.green);
             
             var hit = Physics2D.Raycast(ray.origin, ray.direction, distance);
             if (hit.collider == null) return;
             if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("MainCamera")) return;
-            
+
             walkDirection = walkDirection == WalkDirections.Left ? WalkDirections.Right : WalkDirections.Left;
-            _renderer.flipX = walkDirection == WalkDirections.Left;
+            _renderer.flipX = (walkDirection == WalkDirections.Right);
         }
     }
 }
