@@ -9,8 +9,11 @@ namespace PEC2.Managers
     /// </summary>
     public class PlayerManager : MonoBehaviour
     {
-        /// <value>Property <c>_isBig</c> represents the size of the player.</value>
+        /// <value>Property <c>isBig</c> represents the size of the player.</value>
         [HideInInspector] public bool isBig;
+
+        /// <value>Property <c>invincibilityTime</c> represents the time left of invincibility.</value>
+        [HideInInspector] public float invincibilityTime;
 
         /// <value>Property <c>_transform</c> represents the Transform component of the player.</value>
         private Transform _transform;
@@ -29,6 +32,12 @@ namespace PEC2.Managers
 
         /// <value>Property <c>AnimatorIsDead</c> preloads the Animator isDead parameter.</value>
         private static readonly int AnimatorIsDead = Animator.StringToHash("isDead");
+        
+        /// <value>Property <c>_audioSource</c> represents the AudioSource component of the player.</value>
+        private AudioSource _audioSource;
+        
+        /// <value>Property <c>_cameraAudioSource</c> represents the AudioSource component of the camera.</value>
+        private AudioSource _cameraAudioSource;
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -40,6 +49,15 @@ namespace PEC2.Managers
             _renderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
             _controller = GetComponent<PlayerController>();
+            
+            _audioSource = GetComponent<AudioSource>();
+            _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        }
+
+        private void FixedUpdate()
+        {
+            if (invincibilityTime > 0)
+                invincibilityTime -= Time.deltaTime;
         }
 
         /// <summary>
@@ -57,17 +75,27 @@ namespace PEC2.Managers
         {
             StartCoroutine(Die());
         }
+        
+        /// <summary>
+        /// Method <c>GetBigger</c> is called when the player needs to grow.
+        /// </summary>
+        public void GetBigger()
+        {
+            StartCoroutine(Grow());
+        }
 
         /// <summary>
         /// Method <c>Grow</c> is called when the player gets bigger.
         /// </summary>
         /// <returns>IEnumerator</returns>
-        public IEnumerator Grow()
+        private IEnumerator Grow()
         {
             isBig = true;
             
             _animator.enabled = false;
             _controller.enabled = false;
+            
+            _audioSource.PlayOneShot(GameplayManager.Instance.AudioClips.TryGetValue("growSound", out AudioClip clip) ? clip : null);
 
             _transform.localScale = new Vector3(1.5f, 1.5f, 0);
             
@@ -75,7 +103,7 @@ namespace PEC2.Managers
             position = new Vector3(position.x, position.y + 0.25f, position.z);
             _transform.position = position;
             
-            _body.constraints = RigidbodyConstraints2D.FreezePositionY;
+            _body.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             
             for (var i = 0; i < 5; i++)
             {
@@ -96,11 +124,14 @@ namespace PEC2.Managers
         private IEnumerator Shrink()
         {
             isBig = false;
+            invincibilityTime = 3f;
             
             _animator.enabled = false;
             _controller.enabled = false;
             
-            _body.constraints = RigidbodyConstraints2D.FreezePositionY;
+            _audioSource.PlayOneShot(GameplayManager.Instance.AudioClips.TryGetValue("shrinkSound", out AudioClip clip) ? clip : null);
+            
+            _body.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             
             for (var i = 0; i < 5; i++)
             {
@@ -124,6 +155,9 @@ namespace PEC2.Managers
         private IEnumerator Die()
         {
             _controller.enabled = false;
+            
+            _cameraAudioSource.Stop();
+            _audioSource.PlayOneShot(GameplayManager.Instance.AudioClips.TryGetValue("diePlayerSound", out AudioClip clip) ? clip : null);
 
             _animator.SetBool(AnimatorIsDead, true);
             
@@ -146,7 +180,7 @@ namespace PEC2.Managers
             
             _body.velocity = Vector2.zero;
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
             
             GameplayManager.Instance.LoseLife();
         }

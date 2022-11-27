@@ -25,6 +25,9 @@ namespace PEC2.Blocks
             }
         }
         
+        /// <summary>
+        /// Method <c>FinalState</c> is called when the block has no more hits left.
+        /// </summary>
         protected virtual void FinalState()
         {
             StartCoroutine(SwitchSprite(true));

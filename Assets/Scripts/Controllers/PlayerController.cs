@@ -58,6 +58,9 @@ namespace PEC2.Controllers
         
         /// <value>Property <c>AnimatorIsCrouching</c> preloads the Animator isCrouching parameter.</value>
         private static readonly int AnimatorIsCrouching = Animator.StringToHash("isCrouching");
+        
+        /// <value>Property <c>_audioSource</c> represents the AudioSource component of the player.</value>
+        private AudioSource _audioSource;
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -68,6 +71,8 @@ namespace PEC2.Controllers
             _body = GetComponent<Rigidbody2D>();
             _renderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
+            
+            _audioSource = GetComponent<AudioSource>();
         }
 
         /// <summary>
@@ -118,6 +123,7 @@ namespace PEC2.Controllers
             if (_isJumping)
             {
                 _isJumping = false;
+                _audioSource.PlayOneShot(GameplayManager.Instance.AudioClips.TryGetValue("jumpSound", out AudioClip clip) ? clip : null);
                 _animator.SetBool(AnimatorIsJumping, true);
                 var jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * _body.gravityScale));
                 _body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);

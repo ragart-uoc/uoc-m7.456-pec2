@@ -8,7 +8,7 @@ namespace PEC2.Managers
     public class DeadZoneManager : MonoBehaviour
     {
         /// <summary>
-        /// Method <c>OnCollisionEnter2D</c> is sent when another object enters a trigger collider attached to this object.
+        /// Method <c>OnTriggerEnter2D</c> is sent when another object enters a trigger collider attached to this object.
         /// </summary>
         /// <param name="collision">The collision instance</param>
         private void OnTriggerEnter2D(Collider2D collision)
@@ -19,7 +19,8 @@ namespace PEC2.Managers
                 {
                     playerManager.DieDirectly();
                 }
-            } else if (collision.CompareTag("Enemy"))
+            }
+            else if (collision.CompareTag("Enemy"))
             {
                 Destroy(collision.gameObject);
             }

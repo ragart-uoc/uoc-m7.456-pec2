@@ -17,16 +17,16 @@ namespace PEC2.Managers
         /// <value>Property <c>walkDirection</c> defines the walking direction of the enemy.</value>
         public WalkDirections walkDirection;
 
-        /// <value>Property <c>_transform</c> represents the RigidBody2D component of the player.</value>
+        /// <value>Property <c>_transform</c> represents the RigidBody2D component of the enemy.</value>
         private Transform _transform;
         
         /// <value>Property <c>_body</c> represents the RigidBody2D component of the enemy.</value>
         private Rigidbody2D _body;
         
-        /// <value>Property <c>_renderer</c> represents the SpriteRenderer component of the player.</value>
+        /// <value>Property <c>_renderer</c> represents the SpriteRenderer component of the enemy.</value>
         private SpriteRenderer _renderer;
 
-        /// <value>Property <c>_animator</c> represents the Animator component of the player.</value>
+        /// <value>Property <c>_animator</c> represents the Animator component of the enemy.</value>
         private Animator _animator;
 
         /// <value>Property <c>AnimatorIsDead</c> preloads the Animator isDead parameter.</value>
@@ -34,6 +34,9 @@ namespace PEC2.Managers
         
         /// <value>Property <c>_playerHasCollided</c> defines if the player has collided with the enemy.</value>
         private bool _playerHasCollided;
+        
+        /// <value>Property <c>_audioSource</c> represents the AudioSource component of the enemy.</value>
+        private AudioSource _audioSource;
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -45,6 +48,8 @@ namespace PEC2.Managers
             _body = GetComponent<Rigidbody2D>();
             _renderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
+            
+            _audioSource = GetComponent<AudioSource>();
         }
 
         /// <summary>
@@ -82,7 +87,12 @@ namespace PEC2.Managers
             {
                 _playerHasCollided = true;
                 if (collision.gameObject.TryGetComponent(out PlayerManager playerManager))
-                    playerManager.GetHit();
+                {
+                    if (playerManager.invincibilityTime > 0)
+                        GetHit();
+                    else
+                        playerManager.GetHit();
+                }
             }
         }
 
@@ -101,9 +111,11 @@ namespace PEC2.Managers
         {
             enabled = false;
             
+            _audioSource.PlayOneShot(GameplayManager.Instance.AudioClips.TryGetValue("dieEnemySound", out AudioClip clip) ? clip : null);
+            
             _animator.SetBool(AnimatorIsDead, true);
 
-            _body.constraints = RigidbodyConstraints2D.FreezePositionY;
+            _body.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
             gameObject.layer = LayerMask.NameToLayer("Death");
             _transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Death");
@@ -129,7 +141,7 @@ namespace PEC2.Managers
             
             var hit = Physics2D.Raycast(ray.origin, ray.direction, distance);
             if (hit.collider == null) return;
-            if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("MainCamera")) return;
+            if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("MainCamera") || hit.collider.CompareTag("PowerUp")) return;
 
             walkDirection = walkDirection == WalkDirections.Left ? WalkDirections.Right : WalkDirections.Left;
             _renderer.flipX = (walkDirection == WalkDirections.Right);

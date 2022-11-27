@@ -16,11 +16,10 @@ namespace PEC2.Blocks
         {
             if (collision.gameObject.CompareTag("Player") && collision.contacts[0].normal.y > 0)
             {
-                if (hits <= 0)
-                    return;
-                var player = collision.gameObject.GetComponent<PlayerManager>();
-                hits--;
-                StartCoroutine(hits < 1 && player.isBig ? Break() : Bounce());
+                if (collision.gameObject.TryGetComponent(out PlayerManager playerManager))
+                {
+                    StartCoroutine(playerManager.isBig ? Break() : Bounce());
+                }
             }
         }
     }

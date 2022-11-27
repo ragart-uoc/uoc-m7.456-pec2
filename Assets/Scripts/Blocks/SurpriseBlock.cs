@@ -15,9 +15,13 @@ namespace PEC2.Blocks
         /// </summary>
         private void Awake()
         {
+            AudioSource = GetComponent<AudioSource>();
             _animator = GetComponent<Animator>();
         }
 
+        /// <summary>
+        /// Method <c>FinalState</c> is called when the block has no more hits left.
+        /// </summary>
         protected override void FinalState()
         {
             _animator.enabled = false;

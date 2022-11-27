@@ -1,6 +1,9 @@
-using TMPro;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace PEC2.Managers
 {
@@ -26,6 +29,12 @@ namespace PEC2.Managers
         
         /// <value>Property <c>_time</c> represents the time left.</value>
         private float _time;
+        
+        /// <value>Property <c>_isGameOver</c> defines if the game is over.</value>
+        private bool _isGameOver;
+        
+        /// <value>Property <c>_isWin</c> defines if the game is won.</value>
+        private bool _isWin;
 
         /// <value>Property <c>_pointsText</c> represents the UI element containing the points.</value>
         private TextMeshProUGUI _pointsText;
@@ -36,8 +45,20 @@ namespace PEC2.Managers
         /// <value>Property <c>_timeText</c> represents the UI element containing the time left.</value>
         private TextMeshProUGUI _timeText;
         
+        /// <value>Property <c>_infoTitleText</c> represents the UI element containing the info title.</value>
+        private TextMeshProUGUI _infoTitleText;
+        
+        /// <value>Property <c>_infoLivesText</c> represents the UI element containing the info lives.</value>
+        private TextMeshProUGUI _infoLivesText;
+        
         /// <value>Property <c>_playerManager</c> represents the PlayerManager component of the player.</value>
         private PlayerManager _playerManager;
+        
+        /// <value>Property <c>_cameraAudioSource</c> represents the AudioSource component of the camera.</value>
+        private AudioSource _cameraAudioSource;
+        
+        /// <value>Property <c>AudioClips</c> represents a dictionary containing all sounds and music for the game.</value>
+        public Dictionary<string, AudioClip> AudioClips = new Dictionary<string, AudioClip>();
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -51,6 +72,24 @@ namespace PEC2.Managers
             }
             Instance = this;
             DontDestroyOnLoad( this.gameObject );
+            
+            AudioClips.Add("mainTheme", Resources.Load<AudioClip>("Music/smb_above_ground"));
+            
+            AudioClips.Add("jumpSound", Resources.Load<AudioClip>("Sounds/smb_jump-small"));
+            AudioClips.Add("growSound", Resources.Load<AudioClip>("Sounds/smb_powerup"));
+            AudioClips.Add("shrinkSound", Resources.Load<AudioClip>("Sounds/smb_pipe"));
+            AudioClips.Add("diePlayerSound", Resources.Load<AudioClip>("Sounds/smb_mariodie"));
+            AudioClips.Add("dieEnemySound", Resources.Load<AudioClip>("Sounds/smb_stomp"));
+            
+            AudioClips.Add("powerUpSound", Resources.Load<AudioClip>("Sounds/smb_powerup_appears"));
+            AudioClips.Add("extraLifeSound", Resources.Load<AudioClip>("Sounds/smb_1-up"));
+            AudioClips.Add("coinSound", Resources.Load<AudioClip>("Sounds/smb_coin"));
+            
+            AudioClips.Add("blockBreakSound", Resources.Load<AudioClip>("Sounds/smb_breakblock"));
+            AudioClips.Add("blockBounceSound", Resources.Load<AudioClip>("Sounds/smb_bump"));
+            
+            AudioClips.Add("gameWinSound", Resources.Load<AudioClip>("Sounds/smb_stage_clear"));
+            AudioClips.Add("gameOverSound", Resources.Load<AudioClip>("Sounds/smb_gameover"));
         }
 
         /// <summary>
@@ -66,18 +105,53 @@ namespace PEC2.Managers
         /// </summary>
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            _time = 10f;
-            _isTimerOn = true;
-            
             _pointsText = GameObject.Find("PointsText").GetComponent<TextMeshProUGUI>();
             _ringsText = GameObject.Find("RingsText").GetComponent<TextMeshProUGUI>();
             _timeText = GameObject.Find("TimeValueText").GetComponent<TextMeshProUGUI>();
 
             UpdatePointsText();
             UpdateRingsText();
-            UpdateTimeText();
-            
-            _playerManager = GameObject.Find("Sonic").GetComponent<PlayerManager>();
+
+            if (scene.name == "Game")
+            {
+                _time = 300f;
+                _isTimerOn = true;
+                UpdateTimeText();
+                
+                _playerManager = GameObject.Find("Sonic").GetComponent<PlayerManager>();
+                
+                _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+                _cameraAudioSource.clip = AudioClips.TryGetValue("mainTheme", out AudioClip clip) ? clip : null;
+                _cameraAudioSource.Play();
+            }
+            else if (scene.name == "Info")
+            {
+                _isTimerOn = false;
+                _timeText.text = String.Empty;
+                
+                _infoTitleText = GameObject.Find("TitleText").GetComponent<TextMeshProUGUI>();
+                _infoLivesText = GameObject.Find("LivesText").GetComponent<TextMeshProUGUI>();
+
+                if (_isWin)
+                {
+                    _infoTitleText.text = "You Win!";
+                    _infoLivesText.text = String.Empty;
+                }
+                else if (_isGameOver)
+                {
+                    _infoTitleText.text = "Game Over";
+                    _infoLivesText.text = String.Empty;
+                    
+                    _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+                    _cameraAudioSource.PlayOneShot(AudioClips.TryGetValue("gameOverSound", out AudioClip clip) ? clip : null);
+                }
+                else
+                {
+                    _infoTitleText.text = "Sonic";
+                    _infoLivesText.text = "x " + _lives.ToString();
+                    StartCoroutine(StartGame());
+                }
+            }
         }
 
         /// <summary>
@@ -107,6 +181,15 @@ namespace PEC2.Managers
                 }
             }
         }
+        
+        /// <summary>
+        /// Method <c>AddLives</c> adds points.
+        /// </summary>
+        public void AddLives(int amount)
+        {
+            _cameraAudioSource.PlayOneShot(AudioClips.TryGetValue("extraLifeSound", out AudioClip clip) ? clip : null);
+            _lives += amount;
+        }
 
         /// <summary>
         /// Method <c>LoseLife</c> makes the player loses a life and restarts the scene.
@@ -114,10 +197,9 @@ namespace PEC2.Managers
         public void LoseLife()
         {
             _lives--;
-            if (_lives > 0)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            else
-                SceneManager.LoadScene("GameOver");
+            if (_lives <= 0)
+                _isGameOver = true;
+            SceneManager.LoadScene("Info");
         }
         
         /// <summary>
@@ -163,10 +245,25 @@ namespace PEC2.Managers
             _timeText.text = seconds > 0 ? seconds.ToString().PadLeft(3, '0') : "000";
         }
         
+        /// <summary>
+        /// Method <c>WinGame</c> wins the game.
+        /// </summary>
         public void WinGame()
         {
-            SceneManager.LoadScene("Win");
+            _isWin = true;
+            SceneManager.LoadScene("Info");
         }
+
+        /// <summary>
+        /// Method <c>StartGame</c> starts the game.
+        /// </summary>
+        /// <returns>IEnumerator</returns>
+        private IEnumerator StartGame()
+        {
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("Game");
+        }
+        
         
         /// <summary>
         /// Method <c>RestartGame</c> restarts the game.
@@ -175,7 +272,7 @@ namespace PEC2.Managers
         {
             Destroy(gameObject);
             Instance = null;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Info");
         }
         
         /// <summary>

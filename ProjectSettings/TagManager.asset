@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Enemy
   - WeakPoint
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Player
   - Enemy
   - Camera
-  - 
+  - PowerUp
   - 
   - 
   - 
