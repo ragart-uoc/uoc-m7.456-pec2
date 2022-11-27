@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace PEC2.Managers
 {
+    /// <summary>
+    /// Class <c>EnemyManager</c> contains the methods and properties needed for the enemy.
+    /// </summary>
     public class EnemyManager : MonoBehaviour
     {
         /// <value>Property <c>movingSpeed</c> defines the initial speed of the enemy.</value>
@@ -28,6 +31,9 @@ namespace PEC2.Managers
 
         /// <value>Property <c>AnimatorIsDead</c> preloads the Animator isDead parameter.</value>
         private static readonly int AnimatorIsDead = Animator.StringToHash("isDead");
+        
+        /// <value>Property <c>_playerHasCollided</c> defines if the player has collided with the enemy.</value>
+        private bool _playerHasCollided;
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -49,6 +55,14 @@ namespace PEC2.Managers
             CheckDirectionCollision();
             _body.velocity = walkDirection == WalkDirections.Left ? new Vector2(-movingSpeed, _body.velocity.y) : new Vector2(movingSpeed, _body.velocity.y);
         }
+        
+        /// <summary>
+        /// Method <c>LateUpdate</c> is called after all Update functions have been called.
+        /// </summary>
+        private void LateUpdate() 
+        {
+            _playerHasCollided = false;
+        }
 
         /// <summary>
         /// Method <c>OnBecameVisible</c> is called when the renderer became visible by any camera.
@@ -64,15 +78,14 @@ namespace PEC2.Managers
         /// <param name="collision">The collision instance</param>
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player") && _playerHasCollided == false)
             {
+                _playerHasCollided = true;
                 if (collision.gameObject.TryGetComponent(out PlayerManager playerManager))
-                {
                     playerManager.GetHit();
-                }
             }
         }
-        
+
         /// <summary>
         /// Method <c>GetHit</c> is called when the enemy is hit by the player.
         /// </summary>

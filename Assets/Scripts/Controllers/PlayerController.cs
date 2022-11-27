@@ -230,6 +230,7 @@ namespace PEC2.Controllers
             if (hit.collider.transform.parent.gameObject.TryGetComponent(out EnemyManager enemy))
             {
                 enemy.GetHit();
+                GameplayManager.Instance.AddPoints(100);
             }
             
             _body.velocity = new Vector2(_body.velocity.x, jumpHeight);

@@ -1,14 +1,16 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using PEC2.Controllers;
 
 namespace PEC2.Managers
 {
+    /// <summary>
+    /// Class <c>PlayerManager</c> contains the methods and properties needed for the player.
+    /// </summary>
     public class PlayerManager : MonoBehaviour
     {
         /// <value>Property <c>_isBig</c> represents the size of the player.</value>
-        public bool isBig;
+        [HideInInspector] public bool isBig;
 
         /// <value>Property <c>_transform</c> represents the Transform component of the player.</value>
         private Transform _transform;
@@ -40,11 +42,26 @@ namespace PEC2.Managers
             _controller = GetComponent<PlayerController>();
         }
 
+        /// <summary>
+        /// Method <c>GetHit</c> is called when the player is hit.
+        /// </summary>
         public void GetHit()
         {
             StartCoroutine(isBig ? Shrink() : Die());
         }
+        
+        /// <summary>
+        /// Method <c>DieDirectly</c> is called when the player dies directly regardless of its state.
+        /// </summary>
+        public void DieDirectly()
+        {
+            StartCoroutine(Die());
+        }
 
+        /// <summary>
+        /// Method <c>Grow</c> is called when the player gets bigger.
+        /// </summary>
+        /// <returns>IEnumerator</returns>
         public IEnumerator Grow()
         {
             isBig = true;
@@ -72,6 +89,10 @@ namespace PEC2.Managers
             _animator.enabled = true;
         }
         
+        /// <summary>
+        /// Method <c>Shrink</c> is called when the player is hit while big.
+        /// </summary>
+        /// <returns>IEnumerator</returns>
         private IEnumerator Shrink()
         {
             isBig = false;
@@ -97,6 +118,9 @@ namespace PEC2.Managers
             _animator.enabled = true;
         }
         
+        /// <summary>
+        /// Method <c>Die</c> is called when the player is dead.
+        /// </summary>
         private IEnumerator Die()
         {
             _controller.enabled = false;
@@ -124,9 +148,7 @@ namespace PEC2.Managers
 
             yield return new WaitForSeconds(5f);
             
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameplayManager.Instance.LoseLife();
         }
-        
-        
     }
 }
