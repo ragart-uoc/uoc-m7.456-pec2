@@ -1,5 +1,5 @@
 using UnityEngine;
-using PEC2.Controllers;
+using PEC2.Managers;
 
 namespace PEC2.Blocks
 {
@@ -18,7 +18,7 @@ namespace PEC2.Blocks
             {
                 if (hits <= 0)
                     return;
-                PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+                var player = collision.gameObject.GetComponent<PlayerManager>();
                 hits--;
                 StartCoroutine(hits < 1 && player.isBig ? Break() : Bounce());
             }

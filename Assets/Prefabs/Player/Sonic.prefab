@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1351927001568778432}
   - component: {fileID: 6805981444786641734}
   - component: {fileID: 2270125723372626464}
+  - component: {fileID: 2062137686291179760}
   m_Layer: 0
   m_Name: Sonic
   m_TagString: Player
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1987258237
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1516216569, guid: d1ed3410330db234eb0c22b361f268f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -173,4 +174,16 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &2062137686291179760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351927001568778445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f2ba717c837e646829a381ef83f17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   isBig: 0

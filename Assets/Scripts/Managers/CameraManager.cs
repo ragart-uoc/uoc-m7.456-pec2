@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace PEC2.Controllers
+namespace PEC2.Managers
 {
     /// <summary>
-    /// Class <c>CameraController</c> contains the methods and properties needed for the camera.
+    /// Class <c>CameraManager</c> contains the methods and properties needed for the camera.
     /// </summary>
-    public class CameraController : MonoBehaviour
+    public class CameraManager : MonoBehaviour
     {
         /// <value>Property <c>player</c> represents the Transform component of the player.</value>
         public Transform player;
@@ -32,7 +32,7 @@ namespace PEC2.Controllers
         /// <summary>
         /// Method <c>Update</c> is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
-        void Update()
+        private void Update()
         {
             // Stored built-in component in variable to reduce cost
             var transform1 = transform;
@@ -46,7 +46,7 @@ namespace PEC2.Controllers
         /// <summary>
         /// Method <c>AddMainCameraColliders</c> adds an EdgeCollider2D component to the camera borders.
         /// </summary>
-        void AddMainCameraColliders()
+        private void AddMainCameraColliders()
         {
             var mainCamera = Camera.main;
             if (mainCamera == null || !mainCamera.orthographic)

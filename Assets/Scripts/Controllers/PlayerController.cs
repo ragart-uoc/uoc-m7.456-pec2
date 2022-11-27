@@ -19,6 +19,9 @@ namespace PEC2.Controllers
         /// <value>Property <c>groundLayer</c> represents the LayerMask component of the player.</value>
         public LayerMask groundLayer;
 
+        /// <value>Property <c>_transform</c> represents the RigidBody2D component of the player.</value>
+        private Transform _transform;
+        
         /// <value>Property <c>_body</c> represents the RigidBody2D component of the player.</value>
         private Rigidbody2D _body;
 
@@ -30,9 +33,6 @@ namespace PEC2.Controllers
 
         /// <value>Property <c>_speed</c> represents the horizontal speed of the player.</value>
         private float _speed;
-
-        /// <value>Property <c>_isBig</c> represents the size of the player.</value>
-        public bool isBig;
 
         /// <value>Property <c>_isJumping</c> defines if the player is jumping.</value>
         private bool _isJumping;
@@ -60,6 +60,7 @@ namespace PEC2.Controllers
         /// </summary>
         private void Awake()
         {
+            _transform = transform;
             _body = GetComponent<Rigidbody2D>();
             _renderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
@@ -111,7 +112,7 @@ namespace PEC2.Controllers
             {
                 _isJumping = false;
                 _animator.SetBool(AnimatorIsJumping, true);
-                float jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * _body.gravityScale));
+                var jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * _body.gravityScale));
                 _body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
             
@@ -192,20 +193,19 @@ namespace PEC2.Controllers
             _body.velocity -= new Vector2(right.x * runSpeed, right.y * runSpeed) * Time.deltaTime;
         }
 
+        /// <summary>
+        /// Method <c>IsGrounded</c> check if the player is touching the ground.
+        /// </summary>
+        /// <returns>Boolean</returns>
         private bool IsGrounded()
         {
-            Vector2 position = transform.position;
-            Vector2 direction = Vector2.down;
-            float distance = 0.7f;
+            Vector2 position = _transform.position;
+            var direction = Vector2.down;
+            var distance = _transform.localScale.y / 2 + 0.1f;
 
             Debug.DrawRay(position, direction, Color.green);
-            RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-            if (hit.collider != null)
-            {
-                return true;
-            }
-
-            return false;
+            var hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+            return hit.collider != null;
         }
     }
 }
