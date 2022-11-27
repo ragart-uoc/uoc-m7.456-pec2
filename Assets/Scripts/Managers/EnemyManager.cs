@@ -57,11 +57,6 @@ namespace PEC2.Managers
         {
             enabled = true;
         }
-        
-        private void OnBecameInvisible()
-        {
-            Destroy(gameObject);
-        }
 
         /// <summary>
         /// Method <c>OnCollisionEnter2D</c> is sent when an incoming collider makes contact with this object's collider.
