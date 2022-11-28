@@ -6,7 +6,7 @@ El objetivo de la práctica era desarollar un juego en 2D que replicara el mundo
 
 ## Vídeo explicativo
 
-
+[![Vídeo explicativo](https://img.youtube.com/vi/mRJc5qHDFFc/maxresdefault.jpg)](https://youtu.be/mRJc5qHDFFc)
 
 ## Versión jugable
 
@@ -33,16 +33,16 @@ Los controles son los siguientes:
 
 A efectos de cumplir lo solicitado en las instrucciones, el prototipo incluye lo siguiente:
 
-- Dos escenas: una escena que muestra la información del jugador (vidas, puntos, etc.) y otra en la que se desarrolla el juego.
-- El escenario de juego se ha estructurado utilizando tilemaps, mediante dos palettes (una para el overworld y otra para el underworld).
-- Se han añadido animaciones y sonidos para todas las acciones del personaje jugador.
-- La cámara se desplaza con el personaje jugador y lo impide volver a atrás.
-- Los personajes oponentes también tienen animaciones y sonidos, se desplazan horizontalmente y mueren si el personaje jugador salta sobre ellos, utilizando una mezcla de colliders y de raycast.
-- Se han implementado varios tipos de bloque: los estándar, que el personaje jugador puede romper cuando es grande; los sorpresa, que contienen monedas o powerups; los que contienen múltiples monedas; y, finalmente, los invisibles.
-- Se han implementado dos powerups: las setas que hacen que el personaje jugador crezca y cuente con un punto de daño adicional y las setas que proporcionan una vida extra.
+- Dos **escenas**: una que muestra la información del jugador (vidas, puntos, etc.) y otra en la que se desarrolla el juego.
+- El escenario de juego se ha estructurado utilizando **tilemaps**, mediante dos **palettes** (una para el overworld y otra para el underworld).
+- Se han añadido **animaciones** y **sonidos** para todas las acciones del personaje jugador.
+- La cámara se desplaza con el personaje jugador y le impide volver a atrás.
+- Los personajes oponentes también tienen animaciones y sonidos, se desplazan horizontalmente y mueren si el personaje jugador salta sobre ellos, utilizando una mezcla de **colliders** y de **raycast**.
+- Se han implementado varios tipos de **bloque**: los estándar, que el personaje jugador puede romper cuando es grande; los sorpresa, que contienen monedas o powerups; los que contienen múltiples monedas; y, finalmente, los invisibles.
+- Se han implementado dos **powerups**: las setas que hacen que el personaje jugador crezca y cuente con un punto de daño adicional y las setas que proporcionan una vida extra.
 - Se ha añadido un HUD con información sobre los puntos, las monedas y el tiempo restante. Si el tiempo llega a cero, el jugador pierde.
-- La escena de juego cuenta con música de fondo y sonidos propios.
-- Además de las animaciones proporcionadas por el componente Animator, también se han creado algunas animaciones en tiempo de ejecución mediante las posiciones y el Lerp.
+- La escena de juego cuenta con **música de fondo** y sonidos propios.
+- Además de las animaciones proporcionadas por el componente `Animator`, también se han creado algunas animaciones en tiempo de ejecución mediante las posiciones y `Vector3.Lerp`.
 
 ## Problemas conocidos
 
